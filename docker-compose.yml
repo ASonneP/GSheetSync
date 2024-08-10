@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  gsheet-updater:
+    build: .
+    container_name: gsheet-sync
+    env_file:
+      - .env
+    volumes:
+      - ./:/app
+    command: python main.py
